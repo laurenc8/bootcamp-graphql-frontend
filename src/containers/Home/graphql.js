@@ -13,8 +13,8 @@ export const ALL_AUTHORS = gql`
 `
 
 export const ADD_AUTHOR = gql`
-  mutation createAuthor ($createAuthorInput: CreateAuthorInput!) {
-  createAuthor (input: $createAuthorInput) {
+  mutation createAuthor ($input: CreateAuthorInput!) {
+  createAuthor (input: $input) {
     firstName
     lastName
   }

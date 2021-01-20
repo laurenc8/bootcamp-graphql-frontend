@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 import React from 'react'
 import { useLazyQuery, useMutation } from '@apollo/react-hooks'
@@ -12,14 +13,16 @@ const Home = () => {
   }
   const [createAuthor, { error: createAuthorError, loading: createAuthorLoading }] = useMutation(ADD_AUTHOR, {
     variables: {
-      createAuthorInput: {
+      input: {
         firstName: 'Lauren',
         lastName: 'Chen',
+        addressId: 'b9ee5775-88bf-43a2-954c-25a7cadd99a9',
       },
     },
     refetchQueries: () => [{ query: ALL_AUTHORS }],
   })
   if (createAuthorError) {
+    console.log(createAuthorError)
     throw new Error('query failed')
   }
   return (
